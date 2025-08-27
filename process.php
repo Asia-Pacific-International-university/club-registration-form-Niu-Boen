@@ -13,7 +13,7 @@ Step 3 Requirements:
 echo"<h2>Your Registration Details</h2>";
 echo "<p><strong>Name:</strong> " . htmlspecialchars($_POST['name']) . "</p>";
 echo "<p><strong>Email:</strong> " . htmlspecialchars($_POST['email']) . "</p>";
-echo "". htmlspecialchars($_POST[""]) . "";
+echo "<p><strong>Club:</strong> ". htmlspecialchars($_POST["club"]) . "</p>";
 /*
 Step 4 Requirements:
 - Add validation for all fields
