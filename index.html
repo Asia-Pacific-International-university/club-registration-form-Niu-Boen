@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Club Registration Form</title>
     <!-- TODO: Link your CSS file here in Step 2 -->
 </head>
@@ -14,6 +15,23 @@
 
     <main>
         <!-- TODO: Create your form here in Step 1 -->
+         <form action="process.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="club_options" placeholder="Input your FULL name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="club_options" placeholder="Input your mail which is you are using" required><br><br>
+
+            <label for="club">Select Club:</label>
+            <select id="club" name="club" class="club_options" required>
+                <option value=""disabled selected>--Please choose an option--</option>
+                <option value="science">Science Club</option>
+                <option value="art">Art Club</option>
+                <option value="sports">Sports Club</option>
+            </select><br><br>
+
+            <input type="submit" value="Register">
+         </form>
         <!-- Requirements for Step 1:
              - Form with POST method
              - Action should point to process.php
