@@ -3,47 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Club Registration Form</title>
-    <!-- TODO: Link your CSS file here in Step 2 -->
+    <title>Club Registration</title>
 </head>
 <body>
-    <header>
-        <h1>Student Club Registration</h1>
-        <p>Join one of our exciting student clubs!</p>
-    </header>
+    <h1>Club Registration Form</h1>
+    <form action="process.php" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br>
+        
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br>
+        
+        <label>Select Club:</label>
+        <select name="club" required>
+            <option value="">--Choose Club--</option>
+            <option value="science">Science Club</option>
+            <option value="art">Art Club</option>
+            <option value="sports">Sports Club</option>
+        </select><br><br>
 
-    <main>
-        <!-- TODO: Create your form here in Step 1 -->
-         <form action="process.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" class="club_options" placeholder="Input your FULL name" required><br><br>
+        <label>Membership Type:</label>
+        <input type="radio" name="membership" value="basic" checked> Basic
+        <input type="radio" name="membership" value="premium"> Premium<br><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="club_options" placeholder="Input your mail which is you are using" required><br><br>
+        <label>Interests (select multiple):</label><br>
+        <input type="checkbox" name="interests[]" value="coding"> Coding
+        <input type="checkbox" name="interests[]" value="design"> Design
+        <input type="checkbox" name="interests[]" value="sports"> Sports<br><br>
 
-            <label for="club">Select Club:</label>
-            <select id="club" name="club" class="club_options" required>
-                <option value=""disabled selected>--Please choose an option--</option>
-                <option value="Science Club">Science Club</option>
-                <option value="Art Club">Art Club</option>
-                <option value="Sports Club">Sports Club</option>
-            </select><br><br>
-
-            <input type="submit" value="Register">
-         </form>
-        <!-- Requirements for Step 1:
-             - Form with POST method
-             - Action should point to process.php
-             - Name field (text input)
-             - Email field (email input)  
-             - Club selection (select dropdown with at least 3 options)
-             - Submit button
-        -->
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Student Club Registration System</p>
-    </footer>
+        <label>Message:</label><br>
+        <textarea name="message" rows="3"></textarea><br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+    <p><a href="process.php?action=view">View All Registrations</a></p>
 </body>
 </html>
